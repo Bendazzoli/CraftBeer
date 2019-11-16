@@ -1,0 +1,11 @@
+=== Criar banco de dados ===
+create database craftBeer;
+
+=== Criar tabela de cervejas ===
+create table beers(id int(10) AUTO_INCREMENT, 
+                   name varchar(50),
+                   ingredients varchar(200),
+                   alcohol_content varchar(30),
+                   price double(10,2),
+                   category varchar(50),
+                   PRIMARY KEY (id));
