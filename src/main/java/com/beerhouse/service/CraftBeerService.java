@@ -45,7 +45,7 @@ public class CraftBeerService {
 	}
 	
 	public void patch(Long id, Beers beer) {
-		// TODO Auto-generated method stub
+		// TODO Criar o servico de patch
 		
 	}
 	
@@ -58,7 +58,7 @@ public class CraftBeerService {
 		if(!optionalBeer.isPresent()) {
 			return beer;
 		}else {
-			throw new BeerAlreadyExistsException("The beer with id " + beer.getId() + " already exists.");
+			throw new BeerAlreadyExistsException();
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class CraftBeerService {
 		if(optionalBeer.isPresent()) {
 			return optionalBeer.get();
 		}else {
-			throw new BeerNotFoundExcetpion("Beer not found for id " + id);
+			throw new BeerNotFoundExcetpion();
 		}
 	}	
 }
