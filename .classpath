@@ -82,4 +82,5 @@
   <classpathentry kind="var" path="M2_REPO/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar" sourcepath="M2_REPO/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-test/5.0.4.RELEASE/spring-test-5.0.4.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/h2database/h2/1.4.196/h2-1.4.196.jar" sourcepath="M2_REPO/com/h2database/h2/1.4.196/h2-1.4.196-sources.jar"/>
 </classpath>

@@ -5,5 +5,4 @@ com/beerhouse/Application.class
 com/beerhouse/exception/BeerAlreadyExistsException.class
 com/beerhouse/entity/Beers.class
 com/beerhouse/exception/handler/ResourceExceptionHandler.class
-com/beerhouse/domain/ErrorDetails.class
 com/beerhouse/repository/CraftBeerRepository.class

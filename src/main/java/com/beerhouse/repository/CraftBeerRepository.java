@@ -8,6 +8,6 @@ import com.beerhouse.entity.Beers;
 
 public interface CraftBeerRepository extends JpaRepository<Beers, Integer>{
 
-	Optional<Beers> findById(Long id);
+	Optional<Beers> findById(String string);
 	
 }

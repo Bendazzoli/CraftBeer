@@ -2,32 +2,55 @@ package com.beerhouse.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Beers{
 	
 	@Id
-	@Column(name = "id")
-	private Long id;
+    @Column(name = "id")
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    private String id;
 	
+	@NotEmpty(message = "Field NAME is required.")
 	@Column(name = "name")
 	private String name;
 	
+	@NotEmpty(message = "Field INGREDIENTS is required.")
 	@Column(name = "ingredients")
 	private String ingredients;
 	
+	@NotEmpty(message = "Field ALCOHOL CONTENT is required.")
 	@Column(name = "alcohol_content")
 	private String alcoholContent;
 	
+	@NotEmpty(message = "Field PRICE is required.")
 	@Column(name = "price")
 	private Double price;
 	
+	@NotEmpty(message = "Field CATEGORY is required.")
 	@Column(name = "category")
 	private String category;
 	
+	public Beers() {
+		
+	}
+	
+	public Beers(String name, String ingredients, String alcoholContent, Double price, String category) {
+		super();
+		this.name = name;
+		this.ingredients = ingredients;
+		this.alcoholContent = alcoholContent;
+		this.price = price;
+		this.category = category;
+	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 

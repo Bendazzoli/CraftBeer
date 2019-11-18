@@ -4,6 +4,5 @@
 /home/mtuser/cursos_android/CraftBeer/src/main/java/com/beerhouse/exception/BeerAlreadyExistsException.java
 /home/mtuser/cursos_android/CraftBeer/src/main/java/com/beerhouse/repository/CraftBeerRepository.java
 /home/mtuser/cursos_android/CraftBeer/src/main/java/com/beerhouse/exception/handler/ResourceExceptionHandler.java
-/home/mtuser/cursos_android/CraftBeer/src/main/java/com/beerhouse/domain/ErrorDetails.java
 /home/mtuser/cursos_android/CraftBeer/src/main/java/com/beerhouse/Application.java
 /home/mtuser/cursos_android/CraftBeer/src/main/java/com/beerhouse/entity/Beers.java

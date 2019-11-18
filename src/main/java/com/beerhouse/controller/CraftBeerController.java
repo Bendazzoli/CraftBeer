@@ -40,24 +40,24 @@ public class CraftBeerController {
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> findById(@PathVariable("id") Long id){
+	public ResponseEntity<?> findById(@PathVariable("id") String id){
 		return ResponseEntity.status(HttpStatus.OK).body(craftBeerService.findById(id));
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<?> put(@PathVariable("id") Long id, @RequestBody Beers beer){
+	public ResponseEntity<?> put(@PathVariable("id") String id, @RequestBody Beers beer){
 		craftBeerService.put(id, beer);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PATCH)
-	public ResponseEntity<?> patch(@PathVariable("id") Long id, @RequestBody Beers beer){
+	public ResponseEntity<?> patch(@PathVariable("id") String id, @RequestBody Beers beer){
 		craftBeerService.patch(id, beer);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<?> delete(@PathVariable("id") Long id){
+	public ResponseEntity<?> delete(@PathVariable("id") String id){
 		craftBeerService.delete(id);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}

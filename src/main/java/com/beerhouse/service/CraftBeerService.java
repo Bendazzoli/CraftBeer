@@ -29,11 +29,11 @@ public class CraftBeerService {
 		return craftBeerRepository.save(notExistsBeer(beer));
 	}
 
-	public Beers findById(Long id){
+	public Beers findById(String id){
 		return existsBeer(id);
 	}
 
-	public void put(Long id, Beers newBeer) {
+	public void patch(String id, Beers newBeer) {
 		
 		Beers beer = existsBeer(id);
         beer.setName((newBeer.getName() == null) ? beer.getName() : newBeer.getName());
@@ -44,12 +44,12 @@ public class CraftBeerService {
         craftBeerRepository.save(beer);
 	}
 	
-	public void patch(Long id, Beers beer) {
+	public void put(String id, Beers beer) {
 		// TODO Criar o servico de patch
 		
 	}
 	
-	public void delete(Long id) {
+	public void delete(String id) {
 		craftBeerRepository.delete(existsBeer(id));
 	}
 	
@@ -62,7 +62,7 @@ public class CraftBeerService {
 		}
 	}
 	
-	private Beers existsBeer(Long id) {
+	private Beers existsBeer(String id) {
 		Optional<Beers> optionalBeer = craftBeerRepository.findById(id);
 		if(optionalBeer.isPresent()) {
 			return optionalBeer.get();
