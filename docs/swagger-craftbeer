@@ -77,16 +77,36 @@ paths:
 definitions:
   Beer:
     type: "object"
+    required:
+      - name
+      - ingredients
+      - alcoholContent
+      - price
+      - category
     properties:
       id:
-        type: "integer"
+        example: "716b54c9-320c-4c29-9524-0c67d54a2754"
+        type: "string"
       name:
+        maxLength: 50
+        example: "Guinness"
         type: "string"
       ingredients:
+        maxLength: 200
+        example: "Malte, lupulo e cevada"
         type: "string"
       alcoholContent:
+        maxLength: 30
+        example: "4.9%"
         type: "string"
       price:
-        type: "number"
+        multipleOf: 0.01
+        maximum: 99999999.99
+        minimum: 0.01
+        format: currency
+        example: "19.90"
+        type: number
       category:
+        maxLength: 50
+        example: "Draught"
         type: "string"

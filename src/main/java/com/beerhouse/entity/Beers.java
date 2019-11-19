@@ -4,11 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.Valid;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Valid
 public class Beers{
 	
 	@Id
@@ -29,7 +35,7 @@ public class Beers{
 	@Column(name = "alcohol_content")
 	private String alcoholContent;
 	
-	@NotEmpty(message = "Field PRICE is required.")
+	@NotNull(message = "Field PRICE is required.")
 	@Column(name = "price")
 	private Double price;
 	
@@ -53,23 +59,29 @@ public class Beers{
 	public String getId() {
 		return id;
 	}
-
+	
+	@Size(max=50)
 	public String getName() {
 		return name;
 	}
 
+	@Size(max=200)
 	public String getIngredients() {
 		return ingredients;
 	}
 
+	@Size(max=30)
 	public String getAlcoholContent() {
 		return alcoholContent;
 	}
 
+	@DecimalMin("0.01")
+	@DecimalMax("99999999.99")
 	public Double getPrice() {
 		return price;
 	}
 
+	@Size(max=50)
 	public String getCategory() {
 		return category;
 	}

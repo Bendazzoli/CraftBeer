@@ -2,7 +2,7 @@
 create database craftBeer;
 
 === Criar tabela de cervejas ===
-create table beers(id int(10) AUTO_INCREMENT, 
+create table beers(id varchar(200), 
                    name varchar(50),
                    ingredients varchar(200),
                    alcohol_content varchar(30),

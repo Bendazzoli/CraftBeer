@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -21,5 +22,10 @@ public class ResourceExceptionHandler {
 	@ExceptionHandler(BeerNotFoundExcetpion.class)
 	public ResponseEntity<?> handleBeerNotFoundException(BeerNotFoundExcetpion e, HttpServletRequest request){
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+	}
+
+	@ExceptionHandler(TransactionSystemException.class)
+	public ResponseEntity<?> handleTransactionSystemException(TransactionSystemException e, HttpServletRequest request){
+		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
 	}
 }
