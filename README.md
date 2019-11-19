@@ -20,6 +20,16 @@ Para criar o banco de dados e, a tabela para esse projeto, seguir com os comando
 
 ## Especificação das APIS
 
+As APIs seguem especificadas no swagger que está nesse projeto.
+
+    craftbeer
+    |
+    |docs
+    |    |___swagger-craftbeer
+
+
+### Funcionalidade das APIs
+
 ```bash
     GET /craftbeer/v1/beers/
 ```
