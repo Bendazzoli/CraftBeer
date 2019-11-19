@@ -1,0 +1,184 @@
+{
+	"id": "d75694d5-135f-97cf-a076-986ef5020d32",
+	"name": "CraftBeer",
+	"description": "",
+	"order": [
+		"d3bf4fa9-f22f-4242-7550-ecc960c5b190",
+		"3603940a-7560-bc8e-a80a-c9ac49f5789b",
+		"74159972-78f6-ffff-536f-917176b03d41",
+		"390ab527-a4e3-bd0c-4541-dbab7c439e29",
+		"e586c6e8-db0e-632b-7e59-0455ba63a5a1",
+		"29425167-6fb2-8f1e-4c2e-3d0108770054"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1573926774091,
+	"owner": "1503526",
+	"public": false,
+	"requests": [
+		{
+			"id": "29425167-6fb2-8f1e-4c2e-3d0108770054",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/craftbeer/v1/beers/716b54c9-320c-4c29-9524-0c67d54a2754",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574191240754,
+			"name": "beers/{id}",
+			"description": "API for update a beer that already exists.",
+			"collectionId": "d75694d5-135f-97cf-a076-986ef5020d32",
+			"responses": [],
+			"rawModeData": "{\n  \"name\": \"Itaipava\"\n}"
+		},
+		{
+			"id": "3603940a-7560-bc8e-a80a-c9ac49f5789b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/craftbeer/v1/beers",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574191231466,
+			"name": "beers",
+			"description": "API for post create a beer.",
+			"collectionId": "d75694d5-135f-97cf-a076-986ef5020d32",
+			"responses": [],
+			"rawModeData": "{ \n  \"name\": \"Brahma\",\n  \"ingredients\": \"Agua, malte e lupulo\",\n  \"alcoholContent\": \"4.5%\",\n  \"category\": \"PILSEN\",\n  \"price\": 1.99\n}"
+		},
+		{
+			"id": "390ab527-a4e3-bd0c-4541-dbab7c439e29",
+			"headers": "cache-control: no-cache\npostman-token: 59554c9b-1527-cd9f-3fe2-4723c24c5936\n",
+			"headerData": [
+				{
+					"key": "cache-control",
+					"value": "no-cache",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "postman-token",
+					"value": "59554c9b-1527-cd9f-3fe2-4723c24c5936",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/craftbeer/v1/beers/",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574191222008,
+			"name": "beers",
+			"description": "API for list all beers.",
+			"collectionId": "d75694d5-135f-97cf-a076-986ef5020d32",
+			"responses": []
+		},
+		{
+			"id": "74159972-78f6-ffff-536f-917176b03d41",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:9000/craftbeer/v1/beers/ff086a93-0146-4258-9a19-fcff20e29031",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574191245481,
+			"name": "beers/{id}",
+			"description": "API for delete a beer by ID.",
+			"collectionId": "d75694d5-135f-97cf-a076-986ef5020d32",
+			"responses": []
+		},
+		{
+			"id": "d3bf4fa9-f22f-4242-7550-ecc960c5b190",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:9000/craftbeer/v1/beers/716b54c9-320c-4c29-9524-0c67d54a2754",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574191227668,
+			"name": "beers/{id}",
+			"description": "API GET to find one beer by ID.",
+			"collectionId": "d75694d5-135f-97cf-a076-986ef5020d32",
+			"responses": []
+		},
+		{
+			"id": "e586c6e8-db0e-632b-7e59-0455ba63a5a1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/craftbeer/v1/beers/716b54c9-320c-4c29-9524-0c67d54a2754",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574191234984,
+			"name": "beers/{id}",
+			"description": "API for modify a beer that already exists.",
+			"collectionId": "d75694d5-135f-97cf-a076-986ef5020d32",
+			"responses": [],
+			"rawModeData": "{ \n  \"name\": \"Skol\",\n  \"ingredients\": \"Agua, malte e lupulo\",\n  \"alcoholContent\": \"4.9%\",\n  \"category\": \"PILSEN\",\n  \"price\": 2.19\n}"
+		}
+	]
+}

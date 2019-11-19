@@ -10,7 +10,7 @@ Para iniciar o projeto é necessário realizar o clone deste repositório
 ```
 
 Ter banco de dados MySQL instalado.
-Para criar o banco de dados e, a tabela para esse projeto, seguir com os comandos registrados em
+Para criar o banco de dados e, a tabela para esse projeto, seguir com os comandos que se encontra nesse repositório.
 
     craftbeer
     |
@@ -20,7 +20,7 @@ Para criar o banco de dados e, a tabela para esse projeto, seguir com os comando
 
 ## Especificação das APIS
 
-As APIs seguem especificadas no swagger que está nesse projeto.
+As APIs seguem especificadas no swagger que se encontra nesse repositório.
 
     craftbeer
     |
@@ -64,3 +64,14 @@ Atualiza todos os dados de uma cerveja de acordo com o id informado na URI e o R
     DELETE /craftbeer/v1/beers/{id}
 ```
 Deleta uma cerveja de acordo com o id informado na URI.
+
+
+## Testando as APIS
+
+Importar a collection no Postman que se encontra nesse repositório.
+
+    craftbeer
+    |
+    |docs
+    |    |___postman-collection-craftbeer.json
+
