@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.beerhouse.entity.Beers;
 import com.beerhouse.exception.BeerAlreadyExistsException;
-import com.beerhouse.exception.BeerNotFoundExcetpion;
+import com.beerhouse.exception.BeerNotFoundException;
 import com.beerhouse.repository.CraftBeerRepository;
 
 @Service
@@ -25,7 +25,7 @@ public class CraftBeerService {
 		return craftBeerRepository.findAll();
 	}
 	
-	public Beers save(Beers beer) {
+	public Beers post(Beers beer) {
 		return craftBeerRepository.save(notExistsBeer(beer));
 	}
 
@@ -34,7 +34,6 @@ public class CraftBeerService {
 	}
 
 	public void patch(String id, Beers newBeer) {
-		
 		Beers beer = existsBeer(id);
         beer.setName((newBeer.getName() == null) ? beer.getName() : newBeer.getName());
         beer.setIngredients((newBeer.getIngredients() == null) ? beer.getIngredients() : newBeer.getIngredients());
@@ -44,9 +43,9 @@ public class CraftBeerService {
         craftBeerRepository.save(beer);
 	}
 	
-	public void put(String id, Beers beer) {
-		// TODO Criar o servico de patch
-		
+	public void put(String id, Beers newBeer) {
+		existsBeer(id);
+		craftBeerRepository.save(newBeer);
 	}
 	
 	public void delete(String id) {
@@ -58,7 +57,7 @@ public class CraftBeerService {
 		if(!optionalBeer.isPresent()) {
 			return beer;
 		}else {
-			throw new BeerAlreadyExistsException();
+			throw new BeerAlreadyExistsException("Already exists a beer for id: " + beer.getId());
 		}
 	}
 	
@@ -67,7 +66,7 @@ public class CraftBeerService {
 		if(optionalBeer.isPresent()) {
 			return optionalBeer.get();
 		}else {
-			throw new BeerNotFoundExcetpion();
+			throw new BeerNotFoundException("Beer not found for id: " + id);
 		}
 	}	
 }

@@ -3,6 +3,8 @@ package com.beerhouse.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +35,8 @@ public class CraftBeerController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> save(@RequestBody Beers beer){
-		craftBeerService.save(beer);
+	public ResponseEntity<Void> post(@Valid @RequestBody Beers beer){
+		craftBeerService.post(beer);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(beer.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
@@ -45,7 +47,7 @@ public class CraftBeerController {
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<?> put(@PathVariable("id") String id, @RequestBody Beers beer){
+	public ResponseEntity<?> put(@PathVariable("id") String id, @Valid @RequestBody Beers beer){
 		craftBeerService.put(id, beer);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}

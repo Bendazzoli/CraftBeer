@@ -23,23 +23,23 @@ public class Beers{
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 	
-	@NotEmpty(message = "Field NAME is required.")
+	@NotEmpty
 	@Column(name = "name")
 	private String name;
 	
-	@NotEmpty(message = "Field INGREDIENTS is required.")
+	@NotEmpty
 	@Column(name = "ingredients")
 	private String ingredients;
 	
-	@NotEmpty(message = "Field ALCOHOL CONTENT is required.")
+	@NotEmpty
 	@Column(name = "alcohol_content")
 	private String alcoholContent;
 	
-	@NotNull(message = "Field PRICE is required.")
+	@NotNull
 	@Column(name = "price")
 	private Double price;
 	
-	@NotEmpty(message = "Field CATEGORY is required.")
+	@NotEmpty
 	@Column(name = "category")
 	private String category;
 	
