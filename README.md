@@ -12,7 +12,7 @@ Para iniciar o projeto é necessário realizar o clone deste repositório
 Ter banco de dados MySQL instalado.
 Para criar o banco de dados e, a tabela para esse projeto, seguir com os comandos registrados em
 
-craftbeer
+    craftbeer
     |
     |docs
     |    |___cria-banco-dados-craftbeer
