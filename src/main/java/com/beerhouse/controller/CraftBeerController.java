@@ -19,7 +19,7 @@ import com.beerhouse.entity.Beers;
 import com.beerhouse.service.CraftBeerService;
 
 @RestController
-@RequestMapping("/beers")
+@RequestMapping("/craftbeer/v1/beers")
 public class CraftBeerController {
 	
 	private CraftBeerService craftBeerService;

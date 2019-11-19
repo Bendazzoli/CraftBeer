@@ -55,6 +55,16 @@ public class Beers{
 		this.price = price;
 		this.category = category;
 	}
+	
+	public Beers(String id, String name, String ingredients, String alcoholContent, Double price, String category) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.ingredients = ingredients;
+		this.alcoholContent = alcoholContent;
+		this.price = price;
+		this.category = category;
+	}
 
 	public String getId() {
 		return id;

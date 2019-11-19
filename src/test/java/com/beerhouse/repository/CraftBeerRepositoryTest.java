@@ -16,7 +16,7 @@ import com.beerhouse.entity.Beers;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @TestPropertySource(properties = {"spring.jpa.hibernate.ddl-auto = create"})
-public class CraftBeerRepositoryTests {
+public class CraftBeerRepositoryTest {
 	
 	@Autowired
 	private CraftBeerRepository craftBeerRepository;

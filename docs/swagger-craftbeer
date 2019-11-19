@@ -10,7 +10,7 @@ produces:
 schemes:
 - "http"
 paths:
-  /beers:
+  '/craftbeer/v1/beers':
     get:
       parameters: []
       responses:
@@ -34,7 +34,7 @@ paths:
           headers:
             location:
               type: "string"
-  /beers/{id}:
+  '/craftbeer/v1/beers/{id}':
     get:
       parameters: []
       responses:
