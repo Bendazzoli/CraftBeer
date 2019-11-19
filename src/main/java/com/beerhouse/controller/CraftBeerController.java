@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,8 @@ import com.beerhouse.service.CraftBeerService;
 @RequestMapping("/craftbeer/v1/beers")
 public class CraftBeerController {
 	
+	private static final Logger LOGGER=LoggerFactory.getLogger(CraftBeerController.class);
+	
 	private CraftBeerService craftBeerService;
 	
 	@Autowired
@@ -36,6 +40,8 @@ public class CraftBeerController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> post(@Valid @RequestBody Beers beer){
+		LOGGER.info("POST Request: RequestBody [" + beer + "]");
+		
 		craftBeerService.post(beer);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(beer.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -43,23 +49,28 @@ public class CraftBeerController {
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> findById(@PathVariable("id") String id){
+		LOGGER.info("GET Request: PathVariable [" + id + "]");
+		
 		return ResponseEntity.status(HttpStatus.OK).body(craftBeerService.findById(id));
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> put(@PathVariable("id") String id, @Valid @RequestBody Beers beer){
+		LOGGER.info("PUT Request: PathVariable [" + id + "] RequestBody[" + beer + "]");
 		craftBeerService.put(id, beer);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PATCH)
 	public ResponseEntity<?> patch(@PathVariable("id") String id, @RequestBody Beers beer){
+		LOGGER.info("PATCH Request: PathVariable [" + id + "] RequestBody[" + beer + "]");
 		craftBeerService.patch(id, beer);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> delete(@PathVariable("id") String id){
+		LOGGER.info("DELETE Request: PathVariable [" + id + "]");
 		craftBeerService.delete(id);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
