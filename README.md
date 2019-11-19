@@ -25,3 +25,32 @@ Para criar o banco de dados e, a tabela para esse projeto, seguir com os comando
 ```
 Retorna todas as cervejas cadastradas.
 
+
+```bash
+    GET /craftbeer/v1/beers/{id}
+```
+Retorna uma cerveja de acordo com o id informado na URI.
+
+
+```bash
+    POST /craftbeer/v1/beers/
+```
+Cadastra uma cerveja de acordo com o RequestBody informado.
+
+
+```bash
+    PUT /craftbeer/v1/beers/{id}
+```
+Atualiza todos os dados de uma cerveja de acordo com o id informado na URI e o RequestBody (todos os campos obrigatórios).
+
+
+```bash
+    PATCH /craftbeer/v1/beers/{id}
+```
+Atualiza todos os dados de uma cerveja de acordo com o id informado na URI e o RequestBody (apenas informar o campo desejado a ser atualizado).
+
+
+```bash
+    DELETE /craftbeer/v1/beers/{id}
+```
+Deleta uma cerveja de acordo com o id informado na URI.
