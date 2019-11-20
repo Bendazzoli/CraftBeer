@@ -44,8 +44,13 @@ public class CraftBeerService {
 	}
 	
 	public void put(String id, Beers newBeer) {
-		existsBeer(id);
-		craftBeerRepository.save(newBeer);
+		Beers beer = existsBeer(id);
+		beer.setName(newBeer.getName());
+        beer.setIngredients(newBeer.getIngredients());
+        beer.setAlcoholContent(newBeer.getAlcoholContent());
+        beer.setPrice(newBeer.getPrice());
+        beer.setCategory(newBeer.getCategory());
+		craftBeerRepository.save(beer);
 	}
 	
 	public void delete(String id) {
